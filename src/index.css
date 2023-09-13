@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "NoirPro";
+  src: url("./assets/fonts/NoirPro-Regular.woff");
+}
+@font-face {
+  font-family: "NoirPro";
+  font-weight: 800;
+  src: url('./assets/fonts/NoirPro-Bold.woff'); 
+  font-style: normal;
+}
+@font-face {
+  font-family: "NoirPro";
+  src: url("./assets/fonts/NoirPro-SemiBold.woff");
+  font-weight: bold;
+    /* font-style: bold; */
+}
+@font-face {
+  font-family: "NoirPro";
+  src: url('./assets/fonts/NoirPro-Italic.woff');
+  font-style: italic;
+}
+
+.active{
+  width: 100%;
+  background-color: #f9f9fa;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+  border-left-width: 3px;
+  border-color: blue;
+  display: flex;
+  align-items: center;
+}
+.nonactive{
+  width: 100%;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.slant-left{
+  /* position: absolute; */
+  /* top: -30px;
+  left: -30px; */
+  /* right: -30px;
+  bottom: -30px; */
+  -webkit-transform: skew(-200deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+}
+.slant-right{
+  -webkit-transform: skew(-200deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+}
+
+.modal{
+ background-color: rgba(2, 2, 2, 0.705);
+}
+.info{
+  background-color: white;
+  opacity: 1;
+}
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+  .loader2 {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+  }
+  .loader2::before , .loader2::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
+  .loader2::after{
+    inset: 8px;
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: rgb(37 99 235 / 1);
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }
+
+  .csc::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .csc::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .csc::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .csc::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
